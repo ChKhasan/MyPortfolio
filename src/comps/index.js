@@ -1,0 +1,16 @@
+export { default as Banner } from './Banner'
+export { default as About } from './About'
+export { default as Facts } from './Facts'
+export { default as CompHeader } from './CompHeader'
+export { default as Skills } from './Skills'
+export { default as Resume } from './Resume'
+export { default as Portfolio } from './Portfolio'
+export { default as Service } from './Service'
+export { default as Testimonials } from './Testimonials'
+export { default as Contact } from './Contact'
+export { default as Footer } from './Footer'
+export { default as Drawer } from './Drawer'
+export { default as Affix } from './Affix'
+export { default as Backround } from './Backround'
+
+

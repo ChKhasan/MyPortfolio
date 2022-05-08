@@ -85,6 +85,11 @@ code {
   -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
   animation: animate 5s linear infinite;
 }
+@media (max-width: 400px) {
+  .anim h1 {
+    font-size: 3rem
+  }
+}
 @keyframes animate {
   0% {
     color: transparent;
@@ -95,18 +100,7 @@ code {
     text-shadow: 0 0 10px #03bcf4,0 0 20px #03bcf4,0 0 40px #03bcf4,0 0 80px #03bcf4,0 0 160px #03bcf4;
   }
 }
-/* .anim h1 {
-  position: absolute;
-  font-family: "Oswald", sans-serif;
-  background: #000;
-  margin-bottom: 0 !important;
-  color: #fff;
-  padding: 16px;
-  font-size: 6rem;
-  border-radius: 20px;
-  font-weight: 700;
-  mix-blend-mode: overlay !important;
-} */
+
 .d-in {
   display: inline-block !important;
 }
@@ -1079,4 +1073,7 @@ canvas {
 }
 .coverflow__container__1P-xE {
   background: transparent !important;
+}
+#about,#service,#portfolio,#contact {
+  overflow: hidden !important;
 }

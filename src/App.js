@@ -50,7 +50,7 @@ function App() {
       <Skills />
       <CoverFlow />
       {/* <Resume /> */}
-      <Portfolio />
+      {/* <Portfolio /> */}
       <Service />
       {/* <Testimonials /> */}
       <Contact />

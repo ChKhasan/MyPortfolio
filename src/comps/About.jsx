@@ -48,9 +48,9 @@ const About = () => {
           // text="a"
           title="About"
         />
-        <div className="row mt-4">
+        <div className="row">
           <div
-            className="col-lg-4"
+            className="col-lg-4 mt-4"
             data-aos="fade-right"
             data-aos-duration="1200"
             data-aos-once="true"
@@ -65,7 +65,7 @@ const About = () => {
             />
           </div>
           <div
-            className="col-lg-8"
+            className="col-lg-8 mt-4"
             data-aos="fade-left"
             data-aos-duration="1200"
             data-aos-once="true"

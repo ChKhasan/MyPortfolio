@@ -14,10 +14,7 @@ const AffixMenu = () => {
       idComps: "home",
       idA: ".home",
     },
-    {
-      idComps: "resume",
-      idA: ".resume",
-    },
+
     {
       idComps: "portfolio",
       idA: ".portfolio",
@@ -108,7 +105,7 @@ console.log(window.screen.height);
               </a>
             </li>
             
-            <li>
+            {/* <li>
               <a
                 id="aa"
                 className="nav-link scrollto2 resume"
@@ -117,7 +114,7 @@ console.log(window.screen.height);
               >
                 <span>Resume</span>
               </a>
-            </li>
+            </li> */}
             <li>
               <a className="nav-link scrollto2 portfolio" role="group" href="#portfolio">
                 <span>Portfolio</span>

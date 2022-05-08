@@ -45,7 +45,7 @@ const About = () => {
     <div className="container-fluid p-60 zindex" id="about">
       <div className="container mt-5 about">
         <CompHeader
-          text="Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas."
+          // text="a"
           title="About"
         />
         <div className="row mt-4">

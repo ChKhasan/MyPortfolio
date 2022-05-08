@@ -49,7 +49,7 @@ function App() {
       {/* <Facts /> */}
       <Skills />
       <CoverFlow />
-      <Resume />
+      {/* <Resume /> */}
       <Portfolio />
       <Service />
       {/* <Testimonials /> */}

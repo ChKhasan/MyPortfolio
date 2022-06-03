@@ -65,7 +65,7 @@ const [category,setCategory] = useState("all")
   }
   return (
     <div className="container-fluid skills p-60">
-      <div className="container mt-5 about" id="portfolio">
+      {/* <div className="container mt-5 about" id="portfolio">
         <CompHeader
           text="Here are a few design projects I've worked on recently. Want to see more? Email me."
           title="Portfolio"
@@ -101,7 +101,7 @@ const [category,setCategory] = useState("all")
             <PortfolioCard {...item} key={index} />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

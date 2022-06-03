@@ -1,14 +1,14 @@
 import React from 'react'
 
-const ServiceCard = (props) => {
+const ServiceCard = ({svg,title,desc}) => {
   return (
     <div className='col-lg-4 col-md-6 icon-box mt-3'>
          <div className='icon'>
-         {props.svg}
+         {svg}
          </div>
          <div>
-             <h4 className='title'><a href="#">{props.title}</a></h4>
-             <p className='description'>{props.desc}</p>
+             <h4 className='title'><a href="#">{title}</a></h4>
+             <p className='description'>{desc}</p>
          </div>
     </div>
   )

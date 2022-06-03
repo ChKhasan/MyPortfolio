@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@200&family=Raleway:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Oswald:wght@500&family=Poppins:wght@200&family=Raleway:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Oswald:wght@500&family=Poppins:wght@200&family=Raleway:wght@500&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -76,18 +77,18 @@ code {
 }
 .anim h1 {
   position: absolute;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin-bottom: 0 !important;
   text-transform: uppercase;
   /* color: #0e3742; */
   font-size: 6rem;
   font-weight: 700;
-  -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
   animation: animate 5s linear infinite;
 }
 @media (max-width: 400px) {
   .anim h1 {
-    font-size: 3rem
+    font-size: 3rem;
   }
 }
 @keyframes animate {
@@ -97,7 +98,8 @@ code {
   }
   100% {
     color: white;
-    text-shadow: 0 0 10px #03bcf4,0 0 20px #03bcf4,0 0 40px #03bcf4,0 0 80px #03bcf4,0 0 160px #03bcf4;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+      0 0 80px #03bcf4, 0 0 160px #03bcf4;
   }
 }
 
@@ -1028,16 +1030,22 @@ code {
 }
 .scrollto2 {
   font-size: 20px !important;
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  /* font-family: 'Luckiest Guy', cursive; */
 }
 .ant-affix {
   transition: 0.4s;
 }
 .scrollto2:focus {
   color: #fff !important;
+
 }
-.ac {
+.actions {
   /* color: #149ddd !important; */
-  font-family: "Luckiest Guy", cursive;
+  font-family: 'Raleway', sans-serif;
+
 }
 .tagcloud {
   font-family: "Poppins", sans-serif;
@@ -1074,6 +1082,200 @@ canvas {
 .coverflow__container__1P-xE {
   background: transparent !important;
 }
-#about,#service,#portfolio,#contact {
+#about,
+#service,
+#portfolio,
+#contact {
   overflow: hidden !important;
+}
+
+.img-anim {
+  position: relative;
+}
+#image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  background: url("../public/Images/IMG_20211115_234554.jpg") center no-repeat
+    fixed;
+  background-size: cover;
+  z-index: 1;
+}
+#image2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../public/Images/IMG_20211115_234554.jpg") center no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+  border: none !important;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+  border: none !important;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+  border: none !important;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
+
+.text_input {
+  padding: 10px !important;
+  border-radius: 25px !important;
+  border: none !important;
+  box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  /* background: rgba(0, 0, 0, 0.05) !important; */
+}
+.text_input input {
+  background: rgba(0, 0, 0, 0.01) !important;
+  width: 100% !important;
+}
+
+.login_images {
+  position: relative;
+  background-image: url("../public/Images/3D-Cool-Plant-Desktop-Background-HD.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.login_images img {
+  width: 100%;
+}
+.login_block {
+  /* aspect-ratio: 1 / 0.5; */
+  overflow: hidden;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}
+.backgroud_fluid {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+.form_btn_full {
+  background: linear-gradient(45deg, #bb36fd, #9b00e8) !important;
+  color: #fff;
+  /* width: 230px !important; */
+  border: none !important;
+  display: flex !important;
+  padding: 10px !important;
+  height: inherit !important;
+  box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  border-radius: 25px !important;
+  justify-content: center;
+  width: 100%;
+}
+.form_btn_full:hover {
+  background: linear-gradient(45deg, #c85bff, #b726ff) !important;
+}
+.form_btn_full:focus {
+  outline: none !important;
+}
+.title_login {
+  padding-bottom: 30px;
+  display: flex;
+  color: blueviolet;
+  justify-content: center;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.loginLeft {
+  background-image: linear-gradient(45deg, #f046ff, #9b00e8);
+  border-radius: 25px;
+  color: rgb(192, 192, 192);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header_title {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginLeft header:first-child {
+  position: absolute;
+  font-size: 64px;
+  color: #fff;
+  font-weight: 800 !important;
+
+  transform: translateX(-5px);
+}
+.loginLeft header:last-child {
+  position: absolute;
+  font-size: 64px;
+  font-weight: 800 !important;
+  color: #9b00e8;
+}
+.loginLeft h1 {
+  font-size: 44px;
+  color: #fff;
+  font-weight: 700 !important;
+}
+.loginRight {
+  background: #fff;
+  border-radius: 25px;
+  padding: 25px;
+  padding-left: 50px;
+}
+.regis_link {
+  margin-top: 5px;
+  color: #9b00e8;
+}
+.regis_link:hover {
+  color: #bb36fd !important;
+}
+.send_btn {
+  background: #149ddd !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+.messages_tab {
+  position: relative !important;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ced4da;
+}
+.to_regis {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: start;
+  background-image: linear-gradient(to right, #26baee, #149ddd) !important;
+  color: #fff !important;
+  padding: 10px 20px;
+  width: 200px !important;
+  border-radius: 25px;
+  transition: 5s !important;
+}
+.to_regis:hover {
+  transition: 5s !important;
+  display: flex;
+  background-image: linear-gradient(to right, #149ddd, #26baee) !important;
+}
+.to_login_modal .ant-modal-content,.to_login_modal .ant-modal-header{
+  border-radius: 25px !important;
 }

@@ -1,36 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Affix, Button } from "antd";
-import About from "./About";
 import ScrollToTop from "react-scroll-to-top";
+import { dataAffixId } from "../dataObj/dataAffixId";
+import { Link } from "react-router-dom";
+import { TOKEN } from "../const/API";
 const AffixMenu = () => {
-  const [top, setTop] = useState(0.1);
+  const TOP = 0.1
   const [isVisible, setIsVisible] = useState(false);
-  const [add, setAdd] = useState([
-    {
-      idComps: "about",
-      idA: ".about",
-    },
-    {
-      idComps: "home",
-      idA: ".home",
-    },
-
-    {
-      idComps: "portfolio",
-      idA: ".portfolio",
-    },
-    {
-      idComps: "service",
-      idA: ".service",
-    },
-    {
-      idComps: "contact",
-      idA: ".contact",
-    }
-
-  ]);
-
-  console.log(top);
+  const authToken = localStorage.getItem(TOKEN)
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
@@ -45,17 +22,17 @@ const AffixMenu = () => {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 
-      add.forEach(item => {
+      dataAffixId.forEach(item => {
         let comps = document.getElementById(item.idComps);
-        let a = document.querySelector(item.idA);
+        let elementId = document.querySelector(item.idA);
       
       if (
         comps.offsetTop <= winScroll &&
         comps.offsetTop + comps.offsetHeight >= winScroll
       ) {
-        a.classList.add("ac");
+        elementId.classList.add("actions");
       } else {
-        a.classList.remove("ac");
+        elementId.classList.remove("actions");
       }
     })
   };
@@ -70,14 +47,14 @@ const AffixMenu = () => {
     if (winScroll > heightToHideFrom) {
       isVisible && setIsVisible(false);
       document.querySelector(".ant-affix").style.background = "linear-gradient(to right ,transparent,#fff, #fff,#fff)";
-    add.map(item => document.querySelector(item.idA).style.color = "#6f7180")
-  document.querySelector('.ac').style.color = '#149ddd';
+      dataAffixId.map(item => document.querySelector(item.idA).style.color = "#6f7180")
+  document.querySelector('.actions').style.color = '#149ddd';
 
 
     } else {
       setIsVisible(true);
       document.querySelector(".ant-affix").style.background = "transparent";
-    add.map(item => document.querySelector(item.idA).style.color = "white")
+      dataAffixId.map(item => document.querySelector(item.idA).style.color = "white")
 console.log(window.screen.height);
     }
   };
@@ -90,7 +67,7 @@ console.log(window.screen.height);
         data-offset-top="0"
         className="d-flex justify-content-center"
         style={{ position: "fixed", zIndex: "3", width: "100%" }}
-        offsetTop={top}
+        offsetTop={TOP}
       >
         <nav id="navbar" className="nav-menu navbar d-flex justify-content-end">
           <ul className="d-flex">
@@ -105,16 +82,7 @@ console.log(window.screen.height);
               </a>
             </li>
             
-            {/* <li>
-              <a
-                id="aa"
-                className="nav-link scrollto2 resume"
-                role="group"
-                href="#resume"
-              >
-                <span>Resume</span>
-              </a>
-            </li> */}
+       
             <li>
               <a className="nav-link scrollto2 portfolio" role="group" href="#portfolio">
                 <span>Portfolio</span>
@@ -130,63 +98,22 @@ console.log(window.screen.height);
                 <span>Contact</span>
               </a>
             </li>
+            <li>
+              {/* {
+                authToken ? <Link to="/message" className="nav-link scrollto2 contact" role="group" href="#contact">
+                <span>Profile</span> */}
+             <Link to="/login" className="nav-link scrollto2 contact" role="group" href="#contact">
+                {authToken ? <span>Profile</span>:<span>LogIn</span>}
+              </Link>
+            
+              
+            </li>
           </ul>
         </nav>
-        {/* <Button type="primary" onClick={() => setTop(top + 10)}>
-          Affix top
-        </Button> */}
+    
       </Affix>
     </div>
   );
 };
-const select = (el, all = false) => {
-  el = el.trim();
-  if (all) {
-    return [...document.querySelectorAll(el)];
-  } else {
-    return document.querySelector(el);
-  }
-};
 
-/**
- * Easy event listener function
- */
-const on = (type, el, listener, all = false) => {
-  let selectEl = select(el, all);
-  if (selectEl) {
-    if (all) {
-      selectEl.forEach((e) => e.addEventListener(type, listener));
-    } else {
-      selectEl.addEventListener(type, listener);
-    }
-  }
-};
-
-/**
- * Easy on scroll event listener
- */
-const onscroll = (el, listener) => {
-  el.addEventListener("scroll", listener);
-};
-
-/**
- * Navbar links active state on scroll
- */
-let navbarlinks = select("#navbar .scrollto2", true);
-const navbarlinksActive = () => {
-  let position = window.scrollY + 200;
-  navbarlinks.forEach((navbarlink) => {
-    if (!navbarlink.hash) return;
-    let section = select(navbarlink.hash);
-    if (!section) return;
-    if (
-      position >= section.offsetTop &&
-      position <= section.offsetTop + section.offsetHeight
-    ) {
-      navbarlink.classList.add("active");
-    } else {
-      navbarlink.classList.remove("active");
-    }
-  });
-};
 export default AffixMenu;

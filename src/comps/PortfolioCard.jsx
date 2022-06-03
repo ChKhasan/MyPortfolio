@@ -1,17 +1,17 @@
 import React from 'react'
 import AOS from 'aos';
 
-const PortfolioCard = (props) => {
+const PortfolioCard = ({img,link}) => {
     AOS.init();
   return (
     <div className="col-lg-4 col-md-6 mt-4 "   data-aos-once="true"    data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
             <div className="portfolio-wrap">
               <img
-                src={props.img}
+                src={img}
                 alt=""
               />
               <div className="portfolio-links">
-                <a href={props.link}>
+                <a href={link}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="28"

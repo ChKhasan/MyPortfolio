@@ -1,19 +1,15 @@
 import React from "react";
 
-const Progress = (props) => {
-
-
+const Progress = ({ title, width }) => {
   return (
     <div className="progress d-flex flex-column">
       <span className="skill">
-        {props.title}
-        <i className="val">{props.width}%</i>
-           
+        {title}
+        <i className="val">{width}%</i>
       </span>
       <div className="progress-bar-wrap ">
- 
         <div
-          style={{ width: `${props.width}%` }}
+          style={{ width: `${width}%` }}
           className="progress-bar "
           role="progressbar"
           aria-valuenow="75"

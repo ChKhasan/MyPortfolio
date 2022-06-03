@@ -9,12 +9,16 @@ import "animate.css";
 
 import "aos/dist/aos.css";
 import WaterAnime from "./comps/WaterAnime";
+import { BrowserRouter } from "react-router-dom";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.render(
   <React.StrictMode>
+    <BrowserRouter>
+
     <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

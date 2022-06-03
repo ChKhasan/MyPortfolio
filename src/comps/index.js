@@ -11,6 +11,5 @@ export { default as Contact } from './Contact'
 export { default as Footer } from './Footer'
 export { default as Drawer } from './Drawer'
 export { default as Affix } from './Affix'
-export { default as Backround } from './Backround'
 
 

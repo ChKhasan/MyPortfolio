@@ -1,21 +1,24 @@
-
 import React from "react";
 import CompHeader from "./CompHeader";
-import AOS from 'aos';
+import AOS from "aos";
 
 const Resume = () => {
   AOS.init();
 
-
   return (
     <div className="container-fluid p-60" id="resume">
-      <div className="container mt-5" >
+      <div className="container mt-5">
         <CompHeader
           text="Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas."
           title="Resume"
         />
         <div className="row">
-          <div data-aos="fade-right" data-aos-once="true"  data-aos-duration="1200" className="col-lg-6">
+          <div
+            data-aos="fade-right"
+            data-aos-once="true"
+            data-aos-duration="1200"
+            className="col-lg-6"
+          >
             <h3 className="resume-title">Sumary</h3>
             <div className="resume-item">
               <h4>ALEX SMITH</h4>
@@ -62,7 +65,12 @@ const Resume = () => {
             </div>
           </div>
 
-          <div data-aos="fade-left" data-aos-duration="1200" data-aos-once="true" className="col-lg-6">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1200"
+            data-aos-once="true"
+            className="col-lg-6"
+          >
             <h3 className="resume-title">Professional Experience</h3>
             <div className="resume-item">
               <h4>SENIOR GRAPHIC DESIGN SPECIALIST</h4>
@@ -97,8 +105,7 @@ const Resume = () => {
             </div>
 
             <div className="resume-item">
-              <h4>
-GRAPHIC DESIGN SPECIALIST</h4>
+              <h4>GRAPHIC DESIGN SPECIALIST</h4>
               <h5>2019 - Present</h5>
               <p>
                 {" "}
@@ -106,20 +113,23 @@ GRAPHIC DESIGN SPECIALIST</h4>
               </p>
               <ul>
                 <li>
-                Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).
+                  Developed numerous marketing programs (logos,
+                  brochures,infographics, presentations, and advertisements).
                 </li>
                 <li>
-                Managed up to 5 projects or tasks at a given time while under pressure
+                  Managed up to 5 projects or tasks at a given time while under
+                  pressure
                 </li>
                 <li>
-                Recommended and consulted with clients on the most appropriate graphic design
+                  Recommended and consulted with clients on the most appropriate
+                  graphic design
                 </li>{" "}
                 <li>
-                Created 4+ design presentations and proposals a month for clients and account managers
+                  Created 4+ design presentations and proposals a month for
+                  clients and account managers
                 </li>
               </ul>
             </div>
-        
           </div>
         </div>
       </div>

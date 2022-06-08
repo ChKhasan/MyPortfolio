@@ -1154,8 +1154,12 @@ canvas {
 .login_images img {
   width: 100%;
 }
+@media (min-width: 1024px){
+  .login_block {
+    aspect-ratio: 1 / 0.5;
+  }
+}
 .login_block {
-  /* aspect-ratio: 1 / 0.5; */
   overflow: hidden;
   border-radius: 25px;
   background: white;

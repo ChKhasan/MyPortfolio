@@ -40,14 +40,13 @@ const About = () => {
           >
             <h3>UI Designer Web Developer.</h3>
             <p className="italic-p">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Brief and basic information about myself
             </p>
             <div className="row">
               <MyDatas status={true} />
               <MyDatas status={false} />
             </div>
-            <div className="row mt-2">
+            {/* <div className="row mt-2">
               <div className="col-12">
                 <p>
                   Officiis eligendi itaque labore et dolorum mollitia officiis
@@ -59,7 +58,7 @@ const About = () => {
                   culpa magni laudantium dolores.
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

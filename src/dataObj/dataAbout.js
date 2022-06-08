@@ -1,21 +1,41 @@
 export const dataAbout = [
     {
       status: true,
+      title: "First Name:",
+      text: "Khasan",
+    },
+    {
+      status: true,
+      title: "Last Name:",
+      text: "Chulliyev",
+    },
+    {
+      status: true,
+      title: "Ganger:",
+      text: "Male",
+    },
+    {
+      status: true,
+      title: "Nationality:",
+      text: "Uzbek",
+    },
+    {
+      status: true,
       title: "Birthday:",
       text: "14 May 1999",
     },
     {
       status: true,
       title: "Website:",
-      text: "www.example.com",
+      text: "https://my-portfolio-kh.netlify.app/",
     },
     {
-      status: true,
+      status: false,
       title: "Phone:",
       text: "+998 99 730 14 99",
     },
     {
-      status: true,
+      status: false,
       title: "City:",
       text: "Tashkent, Uzb",
     },

@@ -18,6 +18,8 @@ import { getData, postData } from "../server/common";
 import { Button } from "antd";
 import axios from "axios";
 import { API_URL, TOKEN } from "../const/API";
+import { getMessagesData } from "../redux/actions/messagesAction";
+import { useDispatch, useSelector } from "react-redux";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -54,17 +56,17 @@ function a11yProps(index) {
 
 const Messages = () => {
   const [value, setValue] = useState(0);
-  const [messageData, setMessageData] = useState([]);
+  const [checked, setChecked] = useState([0]);
+  const dispatch = useDispatch()
+  const store = useSelector(state => state.messages.message_data)
 
   useEffect(() => {
-    getData("auth/messages").then((res) => {
-      setMessageData(res.data.data);
-    });
+    dispatch(getMessagesData())
   }, []);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const [checked, setChecked] = useState([0]);
+
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -75,22 +77,9 @@ const Messages = () => {
     } else {
       newChecked.splice(currentIndex, 1);
     }
-    console.log(checked);
     setChecked(newChecked);
   };
-  const postMessage = () => {
 
-    postData("messages", { message: "Salom kursdoshlar va kasbdoshlar " }).then(() => {
-
-      getData("auth/messages").then((res) => {
-        console.log(res.data.data);
-        setMessageData(res.data.data);
-      });
-
-    });
-
-
-  };
   return (
     <div>
       <div className="content-body">
@@ -125,7 +114,7 @@ const Messages = () => {
                   bgcolor: "background.paper",
                 }}
               >
-         {messageData.filter(item => item.answer.length > 0).map((element,index) => {
+         {store.filter(item => item.answer.length > 0).map((element,index) => {
 
                return(
                <ListItem key={index} alignItems="flex-start">
@@ -168,7 +157,7 @@ const Messages = () => {
                   bgcolor: "background.paper",
                 }}
               >
-                {messageData.map((item) => {
+                {store.map((item) => {
                   const labelId = `checkbox-list-label-${item._id}`;
 
                   return (

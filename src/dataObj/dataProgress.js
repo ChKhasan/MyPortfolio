@@ -27,7 +27,7 @@ export const dataProgress = [
   {
     id: 2,
     title: "REACT JS",
-    width: 55,
+    width: 85,
   },
   {
     id: 2,
@@ -37,6 +37,6 @@ export const dataProgress = [
   {
     id: 2,
     title: "GIT",
-    width: 55,
+    width: 80,
   },
 ];

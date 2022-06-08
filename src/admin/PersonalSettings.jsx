@@ -15,6 +15,8 @@ import ImgCrop from "antd-img-crop";
 import { API_URL } from "../const/API";
 import axios from "axios";
 import { getData, putData } from "../server/common";
+import { useDispatch, useSelector } from "react-redux";
+import { getPersonalInfo } from "../redux/actions/personalInfoAction";
 
 const layout = {
   labelCol: {
@@ -71,27 +73,22 @@ function a11yProps(index) {
 const PersonalSettings = () => {
   const [edit, setEdit] = useState(true);
   const [value, setValue] = useState(0);
-  const [personalData,setPersonalData] = useState([])
+  const dispatch = useDispatch()
+  const store = useSelector(state => state.personalInfo.personal_data)
 
   useEffect(() => {
-    getData(API_URL + "auth/me").then((res) => {
-      console.log(res.data.data);
-      setPersonalData(res.data.data)
-    });
+    dispatch(getPersonalInfo())
   },[])
+
   const onFinish = (values) => {
-    console.log(values);
    putData("auth/updatedetails",values).then(() => {
-    getData(API_URL + "auth/me").then((res) => {
-      // console.log(res.data.data);
-      setPersonalData(res.data.data)
-    });
+    dispatch(getPersonalInfo())
    })
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-  const handleChange = (event, newValue) => {
+  const handleChange = (_, newValue) => {
     setValue(newValue);
   };
 
@@ -122,7 +119,6 @@ const PersonalSettings = () => {
     const imgWindow = window.open(src);
     imgWindow.document.write(image.outerHTML);
   };
-  console.log(personalData);
   const onFinishPassword = (values) => {
      putData("auth/updatepassword",values).then((res) => {
                console.log(res);
@@ -171,7 +167,7 @@ const PersonalSettings = () => {
                   className="personal_info inline-block "
                   style={{ display: "inline-block" }}
                 >
-                  <Image width={200} src={personalData.photo} />
+                  <Image width={200} src={store.photo} />
                 </div>
               </div>
               <div className="d-flex justify-content-center mt-3 mb-3">
@@ -180,60 +176,53 @@ const PersonalSettings = () => {
                   Изменить
                 </Button>
               </div>
-              {/* {personalData.map((element,index) => {
-                return  <div className=" col-6">
-                <div className="personal_info">
-                  <p>First Name</p>
-                  <span>Hasan</span>
-                </div>
-              </div>
-              })} */}
+    
               <div className=" col-6">
                 <div className="personal_info">
                   <p>First Name</p>
-                  <span>{personalData.first_name}</span>
+                  <span>{store.first_name}</span>
                 </div>
               </div>
               <div className=" col-6">
                 <div className="personal_info">
                   <p>Last Name</p>
-                  <span>{personalData.last_name}</span>
+                  <span>{store.last_name}</span>
                 </div>
               </div>
               <div className=" col-6">
                 <div className="personal_info">
                   <p>Username</p>
-                  <span>{personalData.username}</span>
+                  <span>{store.username}</span>
                 </div>
               </div>
               <div className=" col-6">
                 <div className="personal_info">
                   <p>info</p>
-                  <span>{personalData.info}</span>
+                  <span>{store.info}</span>
                 </div>
               </div>
               <div className=" col-6">
                 <div className="personal_info">
                   <p>phoneNumber</p>
-                  <span>{personalData.phoneNumber}</span>
+                  <span>{store.phoneNumber}</span>
                 </div>
               </div>
               <div className=" col-6">
                 <div className="personal_info">
                   <p>birthday</p>
-                  <span>{personalData.birthday}</span>
+                  <span>{store.birthday}</span>
                 </div>
               </div>
               <div className=" col-6">
                 <div className="personal_info">
                   <p>address</p>
-                  <span>{personalData.address}</span>
+                  <span>{store.address}</span>
                 </div>
               </div>
               <div className=" col-6">
                 <div className="personal_info">
                   <p>email</p>
-                  <span>{personalData.email}</span>
+                  <span>{store.email}</span>
                 </div>
               </div>
             </div>

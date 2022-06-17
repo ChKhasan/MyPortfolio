@@ -5,6 +5,7 @@ import Banner from '../comps/Banner'
 import Contact from '../comps/Contact'
 import CoverFlow from '../comps/CoverFlow'
 import Footer from '../comps/Footer'
+import Messengers from '../comps/Messengers'
 import Portfolio from '../comps/Portfolio'
 import Resume from '../comps/Resume'
 import Service from '../comps/Service'
@@ -14,6 +15,7 @@ const FullPages = () => {
   return (
     <div>
             <Affix />
+            <Messengers />
       <Drawer />
       <Banner />
       <About />

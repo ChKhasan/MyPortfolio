@@ -23,29 +23,29 @@ const Contact = () => {
   const refMessage = useRef(null);
   const auth = useAuth()
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  //   emailjs
-  //     .sendForm(
-  //       "service_6c1gtbv",
-  //       "template_nhg8zfc",
-  //       form.current,
-  //       "KXRXxhdmhUS9nV40H"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  //   document.getElementById("name").value = "";
-  //   document.getElementById("email").value = "";
-  //   document.getElementById("subject").value = "";
-  //   document.getElementById("message").value = "";
-  // };
+    emailjs
+      .sendForm(
+        "service_6c1gtbv",
+        "template_nhg8zfc",
+        form.current,
+        "KXRXxhdmhUS9nV40H"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+  };
   const getAPIMessage = () => {
     getData("auth/messages").then((res) => {
       setMessageData(res.data.data);
@@ -146,13 +146,13 @@ const Contact = () => {
             <form
               ref={form}
               action="mailto:chulliyevhasan1499@mail.ru"
-              // onSubmit={sendEmail}
+              onSubmit={sendEmail}
               method="post"
               role="form"
               enctype="text/plain"
               className="php-email-form"
             >
-              {/* <div className="row">
+              <div className="row">
                 <div className="form-group col-md-6">
                   <label for="name">Your Name</label>
                   <input type="text" name="name" className="form-control" id="name" required />
@@ -161,11 +161,11 @@ const Contact = () => {
                   <label for="name">Your Email</label>
                   <input type="email" className="form-control" name="email" id="email" required />
                 </div>
-              </div> */}
-              {/* <div className="form-group">
+              </div>
+              <div className="form-group">
                 <label for="name">Subject</label>
                 <input type="text" className="form-control" name="subject" id="subject" required />
-              </div> */}
+              </div>
               <Modal
         title="You are not registered"
         className="to_login_modal"
@@ -184,7 +184,7 @@ const Contact = () => {
         <Link className="to_regis" to="/reginter" >Registraton</Link>
         </div>
       </Modal>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <label for="name">Write Message</label>
                 <div className="d-flex">
                   <input
@@ -204,11 +204,11 @@ const Contact = () => {
                     Send
                   </Button>
                 </div>
-              </div>
-              <div className="messages_tab">
-                {/* {messageData.map((item,index) => {
+              </div> */}
+              {/* <div className="messages_tab">
+                {messageData.map((item,index) => {
                  return <h1 key={index}>{item.message}</h1>
-               })} */}
+               })}
                 <Box sx={{ pb: 7 }} ref={ref}>
                   <CssBaseline />
                   <List>
@@ -225,8 +225,8 @@ const Contact = () => {
                     ))}
                   </List>
                 </Box>
-              </div>
-              {/* <div className="form-group">
+              </div> */}
+              <div className="form-group">
                 <label for="name">Messages</label>
                 <textarea className="form-control" name="message" rows="10" id="message" required></textarea>
               </div>
@@ -235,7 +235,7 @@ const Contact = () => {
                 <div className="error-message"></div>
                 <div className="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div className="text-center"><button type="submit" >Send Message</button></div> */}
+              <div className="text-center"><button type="submit" >Send Message</button></div>
             </form>
           </div>
         </div>

@@ -16,20 +16,25 @@ import PortfolioP from "./pages/";
 import LogIn from "./pages/LogIn";
 import RegistrationP from "./admin/RegistrationP";
 
-
 function App() {
   AOS.init();
 
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
   const FadeUp = batch(Fade(), Move(), Sticky());
   const pure = new PureCounter();
+  const testFunc = () => {
+
+  }
+  const res = testFunc()
+  console.log(res);
   return (
     <>
       <PortfolioP />
+
       {/* <LogIn /> */}
       {/* <AdminP /> */}
       {/* <RegistrationP /> */}
-   </>
+    </>
   );
 }
 

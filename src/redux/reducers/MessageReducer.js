@@ -7,9 +7,10 @@ const intialState = {
 export default function (state = intialState, action) {
   switch (action.type) {
     case TAKE_MESSAGES_DATA:
+      const dataMessages = action.payload
       return {
         ...state,
-        message_data: action.payload,
+        message_data: dataMessages,
       };
     default:
       return state;

@@ -3,8 +3,9 @@ import CompHeader from "./CompHeader";
 import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
 import { dataAbout } from "../dataObj/dataAbout";
+import Tilt from "react-parallax-tilt";
 
-
+// import './TiltImg.demozap.scss';
 
 const About = () => {
   const ref = React.useRef(null);
@@ -16,19 +17,30 @@ const About = () => {
         <CompHeader title="About" />
         <div className="row">
           <div
-            className="col-lg-4 mt-4 img-anim"
+            className="col-lg-4 mt-4 img-anim position-relative"
             data-aos="fade-right"
             data-aos-duration="1200"
             data-aos-once="true"
           >
-            <animated.img
+            {/* <animated.img
               className="anime-img"
               style={{ ...style, width: "100%", height: "auto" }}
               src="Images/IMG_20211115_234554.jpg"
               ref={ref}
               {...mouseHandlers}
               alt=""
-            />
+            /> */}
+            <Tilt
+            className="anime-img"
+            >
+              <img
+              
+                style={{  width: "100%"}}
+                src="Images/IMG_20211115_234554.jpg"
+                className="inner-element anime-img"
+                alt="pic"
+              />
+            </Tilt>
             {/* <div id="image"></div>
             <div id="image2"></div> */}
           </div>
@@ -38,10 +50,8 @@ const About = () => {
             data-aos-duration="1200"
             data-aos-once="true"
           >
-            <h3>UI Designer Web Developer.</h3>
-            <p className="italic-p">
-            Brief and basic information about myself
-            </p>
+            <h3>Frond End Web Developer.</h3>
+            <p className="italic-p">Brief and basic information about myself</p>
             <div className="row">
               <MyDatas status={true} />
               <MyDatas status={false} />
@@ -62,7 +72,6 @@ const About = () => {
           </div>
         </div>
       </div>
-     
     </div>
   );
 };

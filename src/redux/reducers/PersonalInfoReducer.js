@@ -6,11 +6,12 @@ const intialState = {
 export default function (state = intialState, action) {
   switch (action.type) {
     case TAKE_PERSONAL_INFO:
+      const dataPersonal = action.payload;
       return {
         ...state,
-        personal_data: action.payload,
+        personal_data: dataPersonal,
       };
-      default: 
-      return state
+    default:
+      return state;
   }
 }

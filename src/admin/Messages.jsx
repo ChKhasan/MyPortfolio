@@ -59,10 +59,12 @@ const Messages = () => {
   const [checked, setChecked] = useState([0]);
   const dispatch = useDispatch()
   const store = useSelector(state => state.messages.message_data)
+  const sto = useSelector(state => state.messages)
 
   useEffect(() => {
     dispatch(getMessagesData())
   }, []);
+  console.log(sto);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

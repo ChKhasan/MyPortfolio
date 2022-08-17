@@ -1314,3 +1314,15 @@ canvas {
 
 }
 
+.download_resume {
+  padding: 10px 45px;
+  color: white;
+  background-color: #149ddd;
+  
+}
+.download_resume_title {
+  margin-bottom: 0 !important;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+
+}

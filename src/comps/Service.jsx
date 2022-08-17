@@ -9,8 +9,8 @@ const Service = () => {
       <div className="container-fluid  p-60 ">
         <CompHeader title="Services" />
         <div className="row services">
-          {dataService.map((item) => (
-            <ServiceCard {...item} />
+          {dataService.map((item,index) => (
+            <ServiceCard {...item} key={index}/>
           ))}
         </div>
       </div>

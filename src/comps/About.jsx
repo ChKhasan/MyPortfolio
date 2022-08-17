@@ -56,6 +56,16 @@ const About = () => {
               <MyDatas status={true} />
               <MyDatas status={false} />
             </div>
+            <div className="row">
+              <div className="col-lg-6 d-flex align-items-center">
+                <h4 className="download_resume_title" >
+                  Download Resume
+                </h4>
+              </div>
+              <div className="col-lg-6 d-flex justify-content-center">
+                <a className="download_resume" href="resume/myResume.pdf" download>Download</a>
+              </div>
+            </div>
             {/* <div className="row mt-2">
               <div className="col-12">
                 <p>
@@ -82,8 +92,8 @@ const MyDatas = ({ status }) => {
       <ul>
         {dataAbout
           .filter((element) => element.status === status)
-          .map((item) => (
-            <li>
+          .map((item,index) => (
+            <li key={index}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -93,7 +103,7 @@ const MyDatas = ({ status }) => {
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                 />
               </svg>

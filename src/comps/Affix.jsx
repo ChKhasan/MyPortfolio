@@ -55,7 +55,6 @@ const AffixMenu = () => {
       setIsVisible(true);
       document.querySelector(".ant-affix").style.background = "transparent";
       dataAffixId.map(item => document.querySelector(item.idA).style.color = "white")
-console.log(window.screen.height);
     }
   };
 
@@ -98,16 +97,16 @@ console.log(window.screen.height);
                 <span>Contact</span>
               </a>
             </li>
-            <li>
+            {/* <li> */}
               {/* {
                 authToken ? <Link to="/message" className="nav-link scrollto2 contact" role="group" href="#contact">
                 <span>Profile</span> */}
-             <Link to="/login" className="nav-link scrollto2 contact" role="group" href="#contact">
+             {/* <Link to="/login" className="nav-link scrollto2 contact" role="group" href="#contact">
                 {authToken ? <span>Profile</span>:<span>LogIn</span>}
               </Link>
             
               
-            </li>
+            </li> */}
           </ul>
         </nav>
     

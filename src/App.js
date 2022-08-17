@@ -22,11 +22,6 @@ function App() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
   const FadeUp = batch(Fade(), Move(), Sticky());
   const pure = new PureCounter();
-  const testFunc = () => {
-
-  }
-  const res = testFunc()
-  console.log(res);
   return (
     <>
       <PortfolioP />

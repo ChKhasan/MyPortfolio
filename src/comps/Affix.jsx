@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Affix, Button } from "antd";
+import { Affix } from "antd";
 import ScrollToTop from "react-scroll-to-top";
 import { dataAffixId } from "../dataObj/dataAffixId";
-import { Link } from "react-router-dom";
 import { TOKEN } from "../const/API";
 const AffixMenu = () => {
   const TOP = 0.1
   const [isVisible, setIsVisible] = useState(false);
-  const authToken = localStorage.getItem(TOKEN)
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
@@ -101,8 +99,8 @@ const AffixMenu = () => {
               {/* {
                 authToken ? <Link to="/message" className="nav-link scrollto2 contact" role="group" href="#contact">
                 <span>Profile</span> */}
-             {/* <Link to="/login" className="nav-link scrollto2 contact" role="group" href="#contact">
-                {authToken ? <span>Profile</span>:<span>LogIn</span>}
+             {/* <Link to="/consolein" className="nav-link scrollto2 contact" role="group" href="#contact">
+                {authToken ? <span>Profile</span>:<span>consoleIn</span>}
               </Link>
             
               

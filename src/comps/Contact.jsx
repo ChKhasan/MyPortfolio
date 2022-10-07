@@ -149,28 +149,28 @@ const Contact = () => {
               onSubmit={sendEmail}
               method="post"
               role="form"
-              enctype="text/plain"
+              encType="text/plain"
               className="php-email-form"
             >
               <div className="row">
                 <div className="form-group col-md-6">
-                  <label for="name">Your Name</label>
+                  <label htmlFor="name">Your Name</label>
                   <input type="text" name="name" className="form-control" id="name" required />
                 </div>
                 <div className="form-group col-md-6">
-                  <label for="name">Your Email</label>
+                  <label htmlFor="name">Your Email</label>
                   <input type="email" className="form-control" name="email" id="email" required />
                 </div>
               </div>
               <div className="form-group">
-                <label for="name">Subject</label>
+                <label htmlFor="name">Subject</label>
                 <input type="text" className="form-control" name="subject" id="subject" required />
               </div>
               <Modal
         title="You are not registered"
         className="to_login_modal"
         centered
-        visible={visible}
+        open={visible}
         onOk={() => setVisible(false)}
         onCancel={() => setVisible(false)}
         width={250}
@@ -227,7 +227,7 @@ const Contact = () => {
                 </Box>
               </div> */}
               <div className="form-group">
-                <label for="name">Messages</label>
+                <label htmlFor="name">Messages</label>
                 <textarea className="form-control" name="message" rows="10" id="message" required></textarea>
               </div>
               <div className="my-3">

@@ -60,7 +60,7 @@ const Messengers = () => {
       dataAffixId.map(
         (item) => (document.querySelector(item.idA).style.color = "white")
       );
-      console.log(window.screen.height);
+      // console.log(window.screen.height);
     }
   };
 

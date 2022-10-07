@@ -9,7 +9,7 @@ import { TOKEN } from "../const/API";
 const LogIn = () => {
   const navigate = useNavigate();
   const onFinish = (values) => {
-    console.log(values);
+    // console.log(values);
     postData("auth/login",values).then((res) => {
          localStorage.setItem(TOKEN,res.data.token)
         window.location.href = '/messages'

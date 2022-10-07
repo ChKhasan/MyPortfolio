@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import CompHeader from "./CompHeader";
 import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
@@ -8,7 +8,7 @@ import Tilt from "react-parallax-tilt";
 // import './TiltImg.demozap.scss';
 
 const About = () => {
-  const ref = React.useRef(null);
+  const ref = useRef('');
   const { style, ...mouseHandlers } = use3dEffect(ref);
 
   return (

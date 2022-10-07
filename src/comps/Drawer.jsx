@@ -65,7 +65,7 @@ const LeftDrawer = ({ onClose ,visible}) => {
     <Drawer
       placement="left"
       className="drawer-list"
-      visible={visible}
+      open={visible}
       closable={false}
     >
       <div className="d-flex flex-column">

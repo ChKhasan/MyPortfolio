@@ -7,10 +7,11 @@ const Banner = () => {
     <div
       className="banner container-fluid d-flex justify-content-center align-items-center"
       id="home"
+      
     >
       <WaterAnime />
       <div
-        style={{ height: "100vh" }}
+        style={{ height: "100vh" ,}}
         className="container d-flex justify-content-center align-items-center flex-column"
         data-aos="fade-in"
         data-aos-duration="1200"

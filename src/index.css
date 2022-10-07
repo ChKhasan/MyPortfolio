@@ -253,6 +253,9 @@ code {
   font-family: "Poppins", sans-serif;
   display: inline;
 }
+.banner {
+  max-height: 1200px;
+}
 /* ackground-color: #82ca9c; */
 .about h2 {
   /* color: #09ab44;

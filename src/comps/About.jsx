@@ -1,9 +1,10 @@
 import React, {useRef} from "react";
 import CompHeader from "./CompHeader";
-import { animated } from "react-spring";
+// import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
 import { dataAbout } from "../dataObj/dataAbout";
 import Tilt from "react-parallax-tilt";
+import { YMaps,Map } from 'react-yandex-maps';
 
 // import './TiltImg.demozap.scss';
 
@@ -52,6 +53,7 @@ const About = () => {
           >
             <h3>Frond End Web Developer.</h3>
             <p className="italic-p">Brief and basic information about myself</p>
+            
             <div className="row">
               <MyDatas status={true} />
               <MyDatas status={false} />

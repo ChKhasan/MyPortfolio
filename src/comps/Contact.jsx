@@ -12,8 +12,9 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import Avatar from "@mui/material/Avatar";
 import { Modal } from "antd";
-import useAuth from '../hooks/useAuth';
+import useAuth from "../hooks/useAuth";
 import { Link } from "react-router-dom";
+import { Map, YMaps } from "react-yandex-maps";
 
 const Contact = () => {
   const form = useRef();
@@ -21,7 +22,7 @@ const Contact = () => {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   const refMessage = useRef(null);
-  const auth = useAuth()
+  const auth = useAuth();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -51,24 +52,24 @@ const Contact = () => {
       setMessageData(res.data.data);
       console.log(res);
     });
-  }
+  };
   useEffect(() => {
-    getAPIMessage()
+    getAPIMessage();
   }, []);
 
-
   const sendMessage = () => {
-    if(auth) return postData("messages",{ message: refMessage.current.value }).then(() => {
-      getAPIMessage()
-      refMessage.current.value = ""
-    });  
-    
-    return setVisible(true)
+    if (auth)
+      return postData("messages", { message: refMessage.current.value }).then(
+        () => {
+          getAPIMessage();
+          refMessage.current.value = "";
+        }
+      );
 
-     
+    return setVisible(true);
   };
   return (
-    <div className="container-fluid p-60" >
+    <div className="container-fluid p-60">
       <div className="container mt-5 " id="contact">
         <CompHeader
           text="If you wanna get in touch, talk to me about a project collaboration or just say hi,
@@ -139,6 +140,14 @@ const Contact = () => {
               </div>
               <div className="map">
                 <AnyReactComponent />
+                {/* <YMaps>
+                  <Map
+                    defaultState={{
+                      center: [55.751574, 37.573856],
+                      zoom: 9,
+                    }}
+                  />
+                </YMaps> */}
               </div>
             </div>
           </div>
@@ -155,35 +164,54 @@ const Contact = () => {
               <div className="row">
                 <div className="form-group col-md-6">
                   <label htmlFor="name">Your Name</label>
-                  <input type="text" name="name" className="form-control" id="name" required />
+                  <input
+                    type="text"
+                    name="name"
+                    className="form-control"
+                    id="name"
+                    required
+                  />
                 </div>
                 <div className="form-group col-md-6">
                   <label htmlFor="name">Your Email</label>
-                  <input type="email" className="form-control" name="email" id="email" required />
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="email"
+                    id="email"
+                    required
+                  />
                 </div>
               </div>
               <div className="form-group">
                 <label htmlFor="name">Subject</label>
-                <input type="text" className="form-control" name="subject" id="subject" required />
+                <input
+                  type="text"
+                  className="form-control"
+                  name="subject"
+                  id="subject"
+                  required
+                />
               </div>
               <Modal
-        title="You are not registered"
-        className="to_login_modal"
-        centered
-        open={visible}
-        onOk={() => setVisible(false)}
-        onCancel={() => setVisible(false)}
-        width={250}
-        footer={
-          <></>
-        }
-      >
-        <div className="d-flex justify-content-center align-items-center flex-column">
-
-        <Link className="to_regis" to="/login" >Login</Link>
-        <Link className="to_regis" to="/reginter" >Registraton</Link>
-        </div>
-      </Modal>
+                title="You are not registered"
+                className="to_login_modal"
+                centered
+                open={visible}
+                onOk={() => setVisible(false)}
+                onCancel={() => setVisible(false)}
+                width={250}
+                footer={<></>}
+              >
+                <div className="d-flex justify-content-center align-items-center flex-column">
+                  <Link className="to_regis" to="/login">
+                    Login
+                  </Link>
+                  <Link className="to_regis" to="/reginter">
+                    Registraton
+                  </Link>
+                </div>
+              </Modal>
               {/* <div className="form-group">
                 <label for="name">Write Message</label>
                 <div className="d-flex">
@@ -228,14 +256,24 @@ const Contact = () => {
               </div> */}
               <div className="form-group">
                 <label htmlFor="name">Messages</label>
-                <textarea className="form-control" name="message" rows="10" id="message" required></textarea>
+                <textarea
+                  className="form-control"
+                  name="message"
+                  rows="10"
+                  id="message"
+                  required
+                ></textarea>
               </div>
               <div className="my-3">
                 <div className="loading">Loading</div>
                 <div className="error-message"></div>
-                <div className="sent-message">Your message has been sent. Thank you!</div>
+                <div className="sent-message">
+                  Your message has been sent. Thank you!
+                </div>
               </div>
-              <div className="text-center"><button type="submit" >Send Message</button></div>
+              <div className="text-center">
+                <button type="submit">Send Message</button>
+              </div>
             </form>
           </div>
         </div>
@@ -243,7 +281,5 @@ const Contact = () => {
     </div>
   );
 };
-
-
 
 export default Contact;
